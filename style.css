@@ -10,7 +10,22 @@ body {
   padding: 20px;
   line-height: 1.6;
 }
+/* ===== Profile Photo ===== */
 
+.profile-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
 .main-title {
   text-align: center;
   color: #00ffcc;
