@@ -198,6 +198,22 @@ body {
   color: #888;
   font-size: 14px;
 }
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00ffcc;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,204,0.4);
+}
+
+#music-btn:hover {
+  background-color: #00ccaa;
+}
 
 /* =========================
    Responsive Design
