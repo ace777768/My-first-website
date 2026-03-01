@@ -1,0 +1,181 @@
+/* =========================
+   Global Styles
+========================= */
+
+body {
+  background: radial-gradient(circle at top, #141414, #0f0f0f);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.main-title {
+  text-align: center;
+  color: #00ffcc;
+  margin-bottom: 50px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   About Section
+========================= */
+
+.about {
+  background: linear-gradient(145deg, #1a1a1a, #141414);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.25);
+}
+
+.about h2 {
+  color: #00ffcc;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00ffcc;
+  padding-bottom: 8px;
+}
+
+.about p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.about strong {
+  color: #ffffff;
+}
+
+.bio {
+  margin-top: 15px;
+  color: #cccccc;
+}
+
+.credit {
+  margin-top: 20px;
+  font-style: italic;
+  color: #00ffcc;
+  font-weight: 500;
+}
+
+/* =========================
+   Semester Section
+========================= */
+
+.semester {
+  margin-bottom: 40px;
+}
+
+.semester h2 {
+  cursor: pointer;
+  border-bottom: 2px solid #00ffcc;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.semester h2:hover {
+  color: #00ffcc;
+}
+
+/* Arrow */
+.semester h2::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.semester h2.open::after {
+  transform: rotate(180deg);
+}
+
+/* Accordion Animation */
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.content.active {
+  max-height: 600px;
+  margin-top: 15px;
+}
+
+/* =========================
+   Card Styling
+========================= */
+
+.card {
+  background-color: #1a1a1a;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,204,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0,255,204,0.35);
+}
+
+.card a {
+  text-decoration: none;
+  color: #0f0f0f;
+  background-color: #00ffcc;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card a:hover {
+  background-color: #00ccaa;
+  transform: scale(1.05);
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 60px;
+  border-top: 1px solid #333;
+  color: #888;
+  font-size: 14px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .main-title {
+    font-size: 22px;
+  }
+
+  .about {
+    padding: 18px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+}
