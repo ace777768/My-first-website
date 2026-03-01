@@ -10,3 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("music-btn");
+
+btn.addEventListener("click", function () {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "⏸ Pause Music";
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Play Music";
+  }
+});
