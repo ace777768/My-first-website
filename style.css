@@ -10,6 +10,15 @@ body {
   padding: 20px;
   line-height: 1.6;
 }
+.header {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-pic {
+  width: 75px;
+  height: 75px;
+}
 /* ===== Header Layout ===== */
 
 .header {
