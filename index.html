@@ -10,21 +10,27 @@
 </head>
 <body>
 
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-bar" id="scrollBar"></div>
+
   <!-- NAV -->
   <nav class="nav">
     <span class="nav-logo">ACE<span class="accent">.</span>BCA</span>
     <div class="nav-links">
       <a href="#semesters">Semesters</a>
       <a href="#about">About</a>
+      <button class="copy-link-btn" id="copyLinkBtn" title="Copy site link">🔗 Share</button>
       <a href="https://instagram.com/a4ace_1" target="_blank" class="nav-ig">Instagram ↗</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
     <div class="hero-tag">// AL-AMEEN INSTITUTE OF INFORMATION SCIENCE · BCA</div>
     <h1 class="hero-title">
-      Notes.<br />
+      <span id="typedLine"></span><br />
       <span class="hero-outline">Organized.</span><br />
       Accessible.
     </h1>
@@ -34,10 +40,10 @@
     <div class="hero-meta">
       <span class="badge badge-live">● SEM 2 LIVE</span>
       <span class="badge badge-dim">SEM 1 · 3–6 COMING</span>
+      <span class="badge badge-visitors" id="visitorBadge">👁 loading...</span>
     </div>
     <a href="#semesters" class="hero-cta">Browse Semesters ↓</a>
 
-    <!-- profile -->
     <div class="hero-profile">
       <img src="ACE.JPEG" alt="S. Abubakar" class="profile-pic" />
       <div class="profile-info">
@@ -95,13 +101,19 @@
       </button>
       <div class="sem-content" id="sem2">
         <div class="resource-grid">
-          <a href="https://drive.google.com/drive/folders/1tTdPTlxSZUoxwMG5XDdi95KsIF-kfChb" target="_blank" class="resource-card">
+          <a href="https://drive.google.com/drive/folders/1tTdPTlxSZUoxwMG5XDdi95KsIF-kfChb" target="_blank" class="resource-card must-read">
             <span class="rc-icon">📄</span>
-            <div class="rc-info"><span class="rc-title">Full Notes</span><span class="rc-sub">Google Drive ↗</span></div>
+            <div class="rc-info">
+              <span class="rc-title">Full Notes <span class="hot-tag">🔥 Must Read</span></span>
+              <span class="rc-sub">Google Drive ↗</span>
+            </div>
           </a>
-          <a href="https://drive.google.com/drive/folders/1YSg2S32uwCUYaQ2fmH6jS9mTlrrCHk9h" target="_blank" class="resource-card">
+          <a href="https://drive.google.com/drive/folders/1YSg2S32uwCUYaQ2fmH6jS9mTlrrCHk9h" target="_blank" class="resource-card must-read">
             <span class="rc-icon">❓</span>
-            <div class="rc-info"><span class="rc-title">Important Questions</span><span class="rc-sub">Google Drive ↗</span></div>
+            <div class="rc-info">
+              <span class="rc-title">Important Questions <span class="hot-tag">🔥 Must Read</span></span>
+              <span class="rc-sub">Google Drive ↗</span>
+            </div>
           </a>
           <a href="https://drive.google.com/drive/folders/1vYd3AjODfVJMLbtTXOelM4kLT3a6TjVT" target="_blank" class="resource-card">
             <span class="rc-icon">🧪</span>
@@ -238,6 +250,9 @@
       <span></span><span></span><span></span><span></span>
     </div>
   </div>
+
+  <!-- COPY TOAST -->
+  <div class="copy-toast" id="copyToast">🔗 Link copied!</div>
 
   <audio id="bg-music" loop>
     <source src="music.mp3" type="audio/mpeg" />
