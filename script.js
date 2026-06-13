@@ -83,16 +83,24 @@ document.addEventListener("DOMContentLoaded", function () {
   drawDots();
   window.addEventListener("resize", function () { resizeCanvas(); initDots(); });
 
-  // ── Visitor Counter ────────────────────────────────────
+  // ── Real Visitor Counter (counterapi.dev) ──────────────
+  // Free, no account needed — auto-creates on first request.
+  // Namespace: ace-bca-portal | Key: bca-visits
   var badge = document.getElementById("visitorBadge");
-  try {
-    var key   = "ace_bca_visits";
-    var count = parseInt(localStorage.getItem(key) || "0", 10) + 1;
-    localStorage.setItem(key, count);
-    badge.textContent = "👁 " + count.toLocaleString() + " visit" + (count === 1 ? "" : "s");
-  } catch (e) {
-    badge.textContent = "👁 Visit counter";
-  }
+
+  fetch("https://counterapi.dev/api/ace-bca-portal/bca-visits?action=up")
+    .then(function (r) {
+      if (!r.ok) throw new Error("Counter API error: " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      var count = data.count || data.value || 0;
+      badge.textContent = "👁 " + count.toLocaleString() + " visit" + (count === 1 ? "" : "s");
+    })
+    .catch(function () {
+      // Silently hide if API is unavailable — don't break the page
+      badge.style.display = "none";
+    });
 
   // ── Copy Link Button ───────────────────────────────────
   var copyBtn   = document.getElementById("copyLinkBtn");
