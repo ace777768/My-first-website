@@ -278,10 +278,12 @@ body::before {
 ============================================================ */
 .hero {
   padding:    60px 48px 64px;
-  border-bottom: 0.5px solid var(--border);
+  border:        0.5px solid rgba(220, 20, 60, 0.18);
+  border-radius: 0 0 20px 20px;
   position:   relative;
   overflow:   hidden;
   isolation:  isolate; /* contain blending/stacking of video+glass layers */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 40px rgba(0,0,0,0.35);
 }
 
 /* Ambient glows (sit above video/glass, below content — purely decorative) */
@@ -313,6 +315,12 @@ body::before {
      1  hero-canvas  (particle network)
      2  hero-body    (all readable UI content)
 ============================================================ */
+.hero-video,
+.hero-glass,
+.hero-canvas {
+  border-radius: inherit;
+}
+
 .hero-video {
   position:       absolute;
   inset:          0;
